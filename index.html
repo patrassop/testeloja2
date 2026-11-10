@@ -1,0 +1,3553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VERTEX DISTRIBUIDORA | Limpeza e Economia</title>
+
+<meta name="description" content="Catálogo online de materiais de limpeza. Monte seu kit e faça seu pedido pelo WhatsApp.">
+
+<style>
+:root {
+    --primary: #087b63;
+    --dark: #075442;
+    --light: #eaf7f2;
+    --orange: #f39b35;
+    --text: #24332e;
+    --muted: #718078;
+    --bg: #f6f9f7;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 115px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px #0000000c;
+}
+
+.topbar {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 190px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+.cart-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.cart-button span {
+    background: white;
+    color: var(--primary);
+    border-radius: 20px;
+    padding: 4px 8px;
+    margin-left: 5px;
+}
+
+/* BANNER */
+
+.hero {
+    background: linear-gradient(120deg, #064e40, #09846a);
+    color: white;
+    padding: 70px 22px;
+}
+
+.hero-content {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    max-width: 680px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #d9eee7;
+    max-width: 570px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: var(--orange);
+    color: #17352d;
+    text-decoration: none;
+    padding: 15px 23px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    box-shadow: 0 5px 16px #00000020;
+    transition: .2s;
+}
+
+.hero-cta:hover {
+    background: #ffad4d;
+    transform: translateY(-2px);
+}
+
+.hero-cta.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid #ffffff80;
+    box-shadow: none;
+}
+
+.hero-cta.secondary:hover {
+    background: #ffffff20;
+}
+
+.hero-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.hero-info span {
+    background: #ffffff20;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* CONTEÚDO */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 42px 22px 70px;
+}
+
+.section-title {
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    font-size: 27px;
+}
+
+.section-title p {
+    color: var(--muted);
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+/* ==========================================
+   CARROSSEL DE FOTOS
+========================================== */
+
+.carousel-section {
+    margin-bottom: 45px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e9efeb;
+    box-shadow: 0 4px 18px #00000010;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform .5s ease;
+    will-change: transform;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    position: relative;
+    overflow: hidden;
+    background: #e9efeb;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.carousel-slide .slide-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px 22px 20px;
+    background: linear-gradient(transparent, #000000a8);
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-shadow: 0 1px 4px #00000060;
+}
+
+.carousel-slide .slide-caption small {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: .9;
+    margin-top: 4px;
+    letter-spacing: 0;
+    text-shadow: none;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffffdd;
+    color: var(--dark);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px #00000025;
+    z-index: 3;
+    transition: background .2s, transform .2s;
+}
+
+.carousel-arrow:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.06);
+}
+
+.carousel-arrow.prev { left: 14px; }
+.carousel-arrow.next { right: 14px; }
+
+.carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.carousel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff80;
+    transition: background .2s, width .2s;
+    padding: 0;
+}
+
+.carousel-dots button.active {
+    background: var(--orange);
+    width: 28px;
+    border-radius: 5px;
+}
+
+.carousel-slide .slide-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    background: var(--light);
+}
+
+.carousel-slide .slide-placeholder .emoji {
+    font-size: 64px;
+    opacity: .5;
+}
+
+/* PESQUISA */
+
+.toolbar {
+    margin-bottom: 18px;
+}
+
+.search {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce7e1;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+}
+
+.search:focus {
+    border-color: var(--primary);
+}
+
+/* FILTROS */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 28px;
+}
+
+.filter {
+    padding: 10px 15px;
+    border: 1px solid #dce7e1;
+    border-radius: 30px;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.filter.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* PRODUTOS */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #e9efeb;
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 25px #0000000b;
+}
+
+.product-image {
+    width: 100%;
+    height: 175px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 14px;
+    cursor: zoom-in;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 7px;
+    transition: transform .3s;
+}
+
+.product:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-image::after {
+    content: "🔍";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    background: #ffffffdd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity .2s;
+    pointer-events: none;
+    box-shadow: 0 2px 8px #00000020;
+}
+
+.product:hover .product-image::after {
+    opacity: 1;
+}
+
+.brand {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 8px;
+}
+
+.product h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.product small {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.add {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.add:hover {
+    background: var(--dark);
+}
+
+.empty {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+}
+
+/* ==========================================
+   MODAL DE ZOOM DA FOTO DO PRODUTO
+========================================== */
+
+.zoom-modal {
+    position: fixed;
+    inset: 0;
+    background: #000000e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    padding: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s, visibility .25s;
+}
+
+.zoom-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.zoom-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(.94);
+    transition: transform .3s;
+}
+
+.zoom-modal.open .zoom-modal-content {
+    transform: scale(1);
+}
+
+.zoom-modal-content img,
+.zoom-modal-content .zoom-placeholder {
+    max-width: 90vw;
+    max-height: 78vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px #00000080;
+    display: block;
+}
+
+.zoom-modal-content .zoom-placeholder {
+    width: 70vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    background: var(--light);
+}
+
+.zoom-caption {
+    margin-top: 16px;
+    color: white;
+    text-align: center;
+    max-width: 90vw;
+}
+
+.zoom-caption strong {
+    display: block;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.zoom-caption span {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    opacity: .85;
+}
+
+.zoom-close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: var(--dark);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px #00000050;
+    z-index: 2;
+    transition: transform .2s;
+}
+
+.zoom-close:hover {
+    transform: scale(1.1);
+}
+
+.zoom-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffffdd;
+    color: var(--dark);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px #00000040;
+    z-index: 2;
+    transition: background .2s, transform .2s;
+}
+
+.zoom-nav:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.06);
+}
+
+.zoom-nav.prev { left: -60px; }
+.zoom-nav.next { right: -60px; }
+
+/* CARRINHO */
+
+.cart-section {
+    margin-top: 55px;
+    background: white;
+    border: 1px solid #e6eee9;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.cart-section h2 {
+    margin-bottom: 0;
+}
+
+.clear-cart {
+    background: transparent;
+    border: 1px solid #f0c9c9;
+    color: #c74a4a;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: .2s;
+}
+
+.clear-cart:hover {
+    background: #fdeaea;
+    border-color: #e6a5a5;
+}
+
+.clear-cart:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    background: transparent;
+}
+
+.cart-empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px 0;
+}
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.cart-row strong {
+    font-size: 13px;
+}
+
+.cart-row small {
+    display: block;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    width: 29px;
+    height: 29px;
+    border: 1px solid #dce7e1;
+    background: white;
+    border-radius: 7px;
+}
+
+.remove {
+    border: none;
+    background: transparent;
+    color: #cf5656;
+    font-size: 12px;
+}
+
+.cart-summary {
+    max-width: 430px;
+    margin: 22px 0 0 auto;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.summary-line.total {
+    color: var(--dark);
+    font-size: 21px;
+    font-weight: 800;
+    border-top: 1px solid #e7eee9;
+    margin-top: 8px;
+    padding-top: 17px;
+}
+
+.discount-line {
+    color: var(--primary);
+}
+
+/* FINALIZAÇÃO */
+
+.checkout {
+    margin-top: 27px;
+    padding-top: 23px;
+    border-top: 1px solid #edf1ee;
+}
+
+.checkout h3 {
+    margin-bottom: 17px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field.full {
+    grid-column: 1/-1;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce7e1;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--primary);
+}
+
+.notice {
+    background: #fff7e9;
+    border: 1px solid #f4e2c3;
+    padding: 15px;
+    border-radius: 9px;
+    color: #815b22;
+    font-size: 12px;
+    margin-top: 18px;
+    line-height: 1.7;
+}
+
+.whatsapp {
+    background: #1ba85b;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 17px;
+    border-radius: 10px;
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.whatsapp:hover {
+    background: #128548;
+}
+
+/* VANTAGENS */
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.benefit {
+    background: white;
+    border: 1px solid #e9efeb;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.benefit .icon {
+    font-size: 28px;
+}
+
+.benefit b {
+    display: block;
+    margin: 10px 0 6px;
+}
+
+.benefit p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #073e34;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+footer p {
+    color: #c7ded5;
+}
+
+footer .mapa {
+    max-width: 800px;
+    margin: 20px auto 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #0a5a4a;
+    box-shadow: 0 4px 16px #00000040;
+}
+
+footer .mapa iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+/* KIT DE LIMPEZA */
+
+.kit {
+    margin-bottom: 52px;
+    scroll-margin-top: 115px;
+}
+
+.kit-box {
+    background: white;
+    border: 1px solid #e6eee9;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.kit-step {
+    margin-bottom: 20px;
+}
+
+.kit-label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 11px;
+}
+
+.kit-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.kit-chip {
+    padding: 11px 17px;
+    border: 1px solid #dce7e1;
+    border-radius: 30px;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+    transition: .15s;
+}
+
+.kit-chip small {
+    display: block;
+    font-size: 10px;
+    opacity: .75;
+    margin-top: 2px;
+}
+
+.kit-chip:hover {
+    border-color: var(--primary);
+}
+
+.kit-chip.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.kit-hint {
+    background: var(--light);
+    color: var(--dark);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.kit-list {
+    border-top: 1px solid #edf1ee;
+    margin-top: 6px;
+}
+
+.kit-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 14px;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.kit-row.off {
+    opacity: .45;
+}
+
+.kit-row input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    accent-color: var(--primary);
+}
+
+.kit-row strong {
+    font-size: 13px;
+    display: block;
+}
+
+.kit-row small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.kit-row .row-total {
+    min-width: 72px;
+    text-align: right;
+    font-size: 13px;
+}
+
+.kit-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.kit-total span {
+    color: var(--muted);
+    font-size: 12px;
+    display: block;
+}
+
+.kit-total strong {
+    color: var(--dark);
+    font-size: 24px;
+}
+
+.kit-warning {
+    color: #815b22;
+    background: #fff7e9;
+    border: 1px solid #f4e2c3;
+    border-radius: 9px;
+    padding: 11px 14px;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 14px;
+}
+
+.kit-add {
+    background: var(--orange);
+    color: #17352d;
+    border: none;
+    padding: 15px 22px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.kit-add:hover {
+    background: #ffad4d;
+}
+
+/* IMAGEM ALTERNATIVA */
+
+.img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    background: var(--light);
+    border-radius: 10px;
+}
+
+/* NOTIFICAÇÃO */
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translate(-50%, 90px);
+    background: var(--dark);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    box-shadow: 0 8px 26px #00000030;
+    z-index: 200;
+    transition: transform .3s;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    max-width: 92vw;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+}
+
+.toast a {
+    color: var(--orange);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .zoom-nav.prev { left: 4px; }
+    .zoom-nav.next { right: 4px; }
+}
+
+@media(max-width: 620px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product {
+        padding: 10px;
+    }
+
+    .product-image {
+        height: 125px;
+    }
+
+    .product h3 {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+
+    .add {
+        padding: 9px 8px;
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    main {
+        padding: 30px 13px 55px;
+    }
+
+    .cart-section {
+        padding: 15px;
+    }
+
+    .cart-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .clear-cart {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cart-row {
+        grid-template-columns: 1fr auto;
+        gap: 9px;
+    }
+
+    .cart-row .quantity {
+        grid-column: 1;
+    }
+
+    .cart-row .row-total {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .cart-row .remove {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .logo img {
+        width: 145px;
+        height: 55px;
+    }
+
+    .cart-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .kit-box {
+        padding: 16px;
+    }
+
+    .kit-row {
+        grid-template-columns: auto 1fr;
+        gap: 9px 12px;
+    }
+
+    .kit-row .quantity {
+        grid-column: 2;
+    }
+
+    .kit-row .row-total {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .kit-footer {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .img-placeholder {
+        font-size: 48px;
+    }
+
+    footer .mapa iframe {
+        height: 240px;
+    }
+
+    /* CARROSSEL MOBILE */
+
+    .carousel-slide {
+        aspect-ratio: 4 / 3;
+    }
+
+    .carousel-slide .slide-caption {
+        font-size: 14px;
+        padding: 32px 16px 16px;
+    }
+
+    .carousel-slide .slide-caption small {
+        font-size: 11px;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .carousel-arrow.prev { left: 8px; }
+    .carousel-arrow.next { right: 8px; }
+
+    .carousel-dots {
+        bottom: 10px;
+    }
+
+    .carousel-slide .slide-placeholder .emoji {
+        font-size: 44px;
+    }
+
+    /* ZOOM MOBILE */
+
+    .zoom-modal {
+        padding: 14px;
+    }
+
+    .zoom-close {
+        top: -12px;
+        right: -8px;
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .zoom-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .zoom-nav.prev { left: 4px; }
+    .zoom-nav.next { right: 4px; }
+
+    .zoom-caption strong {
+        font-size: 15px;
+    }
+
+    .zoom-caption span {
+        font-size: 12px;
+    }
+
+    .zoom-modal-content .zoom-placeholder {
+        width: 80vw;
+        height: 40vh;
+        font-size: 64px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+
+<header>
+
+    <div class="topbar">
+        🚚 Entrega em até 72 horas em toda a região Sul Fluminense do RJ
+    </div>
+
+    <div class="nav">
+
+        <div class="logo">
+            <img src="imagens/logo2.png" alt="Logo da empresa">
+        </div>
+
+        <button class="cart-button" onclick="goCart()">
+            🛒 Carrinho
+            <span id="cart-count">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- BANNER -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Limpeza e economia para o seu dia a dia.</h1>
+
+        <p>
+            Encontre produtos de limpeza para sua casa,
+            empresa ou instituição. Escolha seus produtos,
+            monte seu carrinho e faça seu pedido diretamente
+            pelo WhatsApp.
+        </p>
+
+        <div class="hero-actions">
+
+            <a class="hero-cta" href="#catalogo">
+                🧾 FAÇA SEU ORÇAMENTO
+            </a>
+
+            <a class="hero-cta secondary" href="#kit">
+                🧰 MONTE SEU KIT DE LIMPEZA
+            </a>
+
+        </div>
+
+        <div class="hero-info">
+            <span>✓ Pedido mínimo: R$ 55,00</span>
+            <span>✓ Entrega em até 72 horas</span>
+            <span>✓ Pix ou boleto</span>
+        </div>
+
+    </div>
+
+</section>
+
+<main>
+
+<!-- KIT DE LIMPEZA -->
+
+<section id="kit" class="kit">
+
+    <div class="section-title">
+
+        <h2>🧰 Monte seu Kit de Limpeza ideal</h2>
+
+        <p>
+            Responda 2 perguntas e receba uma sugestão pronta.
+            Você pode ajustar as quantidades antes de adicionar ao carrinho.
+        </p>
+
+    </div>
+
+    <div class="kit-box">
+
+        <div class="kit-step">
+
+            <span class="kit-label">
+                1. Onde o kit será usado?
+            </span>
+
+            <div class="kit-chips" id="kit-env"></div>
+
+        </div>
+
+        <div class="kit-step">
+
+            <span class="kit-label">
+                2. Qual o tamanho do espaço?
+            </span>
+
+            <div class="kit-chips" id="kit-size"></div>
+
+        </div>
+
+        <div id="kit-result"></div>
+
+    </div>
+
+</section>
+
+<!-- CATÁLOGO -->
+
+<section id="catalogo">
+
+    <div class="section-title">
+
+        <h2>Nosso catálogo</h2>
+
+        <p>
+            Confira nossos produtos e adicione ao seu carrinho.
+        </p>
+
+    </div>
+
+    <!-- ==========================================
+         CARROSSEL DE FOTOS
+         As imagens estão na pasta "imagens" do projeto.
+    =========================================== -->
+
+    <section class="carousel-section">
+
+        <div class="carousel" id="carousel" aria-roledescription="carrossel" aria-label="Galeria de fotos dos produtos">
+
+            <div class="carousel-track" id="carousel-track">
+
+                <div class="carousel-slide">
+                    <img src="imagens/carrossel1.jpeg" alt="Foto dos produtos de limpeza" loading="lazy" onerror="slideFallback(this,'🧴')">
+                    <div class="slide-caption">
+                        Nossos produtos
+                        <small>Limpeza profissional para o seu dia a dia</small>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="imagens/carrossel2.jpeg" alt="Galões de desinfetante" loading="lazy" onerror="slideFallback(this,'🪣')">
+                    <div class="slide-caption">
+                        Galões e desinfetantes
+                        <small>Economia em grande quantidade</small>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="imagens/carrossel3.jpeg" alt="Kits de limpeza" loading="lazy" onerror="slideFallback(this,'🧰')">
+                    <div class="slide-caption">
+                        Kits prontos
+                        <small>Monte o seu kit ideal</small>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="imagens/carrossel4.jpeg" alt="Produtos de lavanderia" loading="lazy" onerror="slideFallback(this,'🧺')">
+                    <div class="slide-caption">
+                        Lavanderia completa
+                        <small>Sabão, amaciante e muito mais</small>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="imagens/carrossel5.jpeg" alt="Acessórios de limpeza" loading="lazy" onerror="slideFallback(this,'🧽')">
+                    <div class="slide-caption">
+                        Acessórios
+                        <small>Tudo para facilitar sua limpeza</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-arrow prev" onclick="carouselPrev()" aria-label="Foto anterior">‹</button>
+            <button class="carousel-arrow next" onclick="carouselNext()" aria-label="Próxima foto">›</button>
+
+            <div class="carousel-dots" id="carousel-dots"></div>
+
+        </div>
+
+    </section>
+
+    <div class="toolbar">
+
+        <input
+            type="text"
+            class="search"
+            id="search"
+            placeholder="🔎 Pesquisar produto..."
+            oninput="renderProducts()"
+        >
+
+    </div>
+
+    <div class="filters">
+
+        <button class="filter active" onclick="setCategory('Todos',this)">
+            Todos
+        </button>
+
+        <button class="filter" onclick="setCategory('Sabonetes',this)">
+            Sabonetes
+        </button>
+
+        <button class="filter" onclick="setCategory('Limpeza geral',this)">
+            Limpeza geral
+        </button>
+
+        <button class="filter" onclick="setCategory('Lavanderia',this)">
+            Lavanderia
+        </button>
+
+        <button class="filter" onclick="setCategory('Uso geral',this)">
+            Uso geral
+        </button>
+
+        <button class="filter" onclick="setCategory('Luvas',this)">
+            Luvas
+        </button>
+
+        <button class="filter" onclick="setCategory('Álcool',this)">
+            Álcool
+        </button>
+
+        <button class="filter" onclick="setCategory('Acessórios',this)">
+            Acessórios
+        </button>
+
+    </div>
+
+    <div class="products" id="products"></div>
+
+</section>
+
+<!-- CARRINHO -->
+
+<section class="cart-section" id="cart">
+
+    <div class="cart-header">
+
+        <h2>🛒 Meu carrinho de compras</h2>
+
+        <button
+            class="clear-cart"
+            id="clear-cart-btn"
+            onclick="clearCart()"
+            disabled
+        >
+            🗑️ Limpar carrinho
+        </button>
+
+    </div>
+
+    <div id="cart-items" class="cart-empty">
+        Seu carrinho está vazio. Adicione produtos para começar!
+    </div>
+
+    <div class="cart-summary" id="summary" style="display:none">
+
+        <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="subtotal">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-line discount-line" id="discount-row">
+            <span>Desconto Pix (3%)</span>
+            <strong id="discount">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-line total">
+            <span>Total</span>
+            <span id="total">R$ 0,00</span>
+        </div>
+
+        <div class="summary-line">
+            <span>Pedido mínimo</span>
+            <strong>R$ 55,00</strong>
+        </div>
+
+    </div>
+
+    <!-- DADOS DO CLIENTE -->
+
+    <div class="checkout">
+
+        <h3>📋 Dados para o pedido</h3>
+
+        <div class="form-grid">
+
+            <div class="field full">
+
+                <label>Tipo de pessoa *</label>
+
+                <select id="personType" onchange="updatePersonType()">
+
+                    <option value="PF">
+                        Pessoa Física (CPF)
+                    </option>
+
+                    <option value="PJ">
+                        Pessoa Jurídica (CNPJ)
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label id="nameLabel">
+                    Nome completo *
+                </label>
+
+                <input
+                    id="customer"
+                    placeholder="Seu nome completo"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label id="docLabel">CPF *</label>
+
+                <input
+                    id="document"
+                    placeholder="000.000.000-00"
+                    inputmode="numeric"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label>Telefone *</label>
+
+                <input
+                    id="phone"
+                    placeholder="(24) 99999-9999"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label>Cidade *</label>
+
+                <input
+                    id="city"
+                    placeholder="Sua cidade"
+                >
+
+            </div>
+
+            <div class="field full">
+
+                <label>Forma de pagamento *</label>
+
+                <select id="payment" onchange="updateCart()">
+
+                    <option value="Pix">
+                        Pix - 3% de desconto
+                    </option>
+
+                    <option value="Boleto">
+                        Boleto - 7 dias
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field full">
+
+                <label>Endereço de entrega *</label>
+
+                <input
+                    id="address"
+                    placeholder="Rua, número, bairro e CEP"
+                >
+
+            </div>
+
+            <div class="field full">
+
+                <label>Observações</label>
+
+                <textarea
+                    id="notes"
+                    rows="3"
+                    placeholder="Informações adicionais sobre seu pedido..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="notice">
+
+            <strong>Informações importantes:</strong>
+
+            <br>• Pedido mínimo de R$ 55,00.
+            <br>• Entrega direta em toda a região Sul Fluminense do RJ.
+            <br>• Prazo de entrega: até 72 horas.
+            <br>• Pix com desconto de 3%.
+            <br>• Boleto com prazo de 7 dias.
+
+        </div>
+
+        <button class="whatsapp" onclick="checkout()">
+            ☎ FINALIZAR PEDIDO PELO WHATSAPP
+        </button>
+
+    </div>
+
+</section>
+
+<!-- VANTAGENS -->
+
+<section class="benefits">
+
+    <div class="benefit">
+
+        <div class="icon">🚚</div>
+
+        <b>Entrega regional</b>
+
+        <p>
+            Atendemos toda a região Sul Fluminense do Rio de Janeiro.
+        </p>
+
+    </div>
+
+    <div class="benefit">
+
+        <div class="icon">⏱️</div>
+
+        <b>Agilidade</b>
+
+        <p>
+            Prazo de entrega de até 72 horas.
+        </p>
+
+    </div>
+
+    <div class="benefit">
+
+        <div class="icon">💳</div>
+
+        <b>Facilidade no pagamento</b>
+
+        <p>
+            Pix com 3% de desconto ou boleto com prazo de 7 dias.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <strong>VERTEX DISTRIBUIDORA</strong>
+
+    <p>Qualidade, economia e praticidade para você.</p>
+
+    <p>Atendimento em toda a região Sul Fluminense - RJ</p>
+
+    <p>© 2026 - Desenvolvido por Vertex Soluções Tecnólogicas</p>
+
+    <div class="mapa">
+        <iframe
+            src="https://maps.google.com/maps?q=R.%20Elisabete%20-%20Ramada%2C%20Miguel%20Pereira%20-%20RJ%2C%2026900-000&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            title="Localização da empresa - R. Elisabete - Ramada, Miguel Pereira - RJ"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- ==========================================
+     MODAL DE ZOOM DA FOTO DO PRODUTO
+========================================== -->
+
+<div class="zoom-modal" id="zoom-modal" onclick="if(event.target===this)closeZoom()">
+
+    <div class="zoom-modal-content">
+
+        <button class="zoom-close" onclick="closeZoom()" aria-label="Fechar">✕</button>
+
+        <button class="zoom-nav prev" onclick="zoomPrev()" aria-label="Produto anterior">‹</button>
+        <button class="zoom-nav next" onclick="zoomNext()" aria-label="Próximo produto">›</button>
+
+        <div id="zoom-image-box"></div>
+
+        <div class="zoom-caption" id="zoom-caption"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* ==========================================
+   CONFIGURAÇÃO DA LOJA
+========================================== */
+
+// WhatsApp oficial da empresa.
+// Formato: 55 + DDD + número.
+
+const WHATSAPP = "5524992621456";
+
+
+/* ==========================================
+   CARROSSEL DE FOTOS
+   As imagens ficam na pasta "imagens" do projeto.
+========================================== */
+
+let carouselIndex = 0;
+let carouselTimer = null;
+const CAROUSEL_INTERVAL = 5000; // tempo de autoplay (ms)
+
+function carouselInit() {
+
+    const track = document.getElementById("carousel-track");
+    const slides = track.children;
+    const total = slides.length;
+    const dotsBox = document.getElementById("carousel-dots");
+
+    // Cria os indicadores (dots)
+    dotsBox.innerHTML = "";
+
+    for (let i = 0; i < total; i++) {
+
+        const dot = document.createElement("button");
+
+        dot.setAttribute("aria-label", "Ir para foto " + (i + 1));
+
+        dot.addEventListener("click", () => carouselGoTo(i));
+
+        dotsBox.appendChild(dot);
+
+    }
+
+    carouselUpdate();
+    carouselStartAuto();
+
+    // Pausa o autoplay ao passar o mouse
+    const carouselEl = document.getElementById("carousel");
+
+    carouselEl.addEventListener("mouseenter", carouselStopAuto);
+
+    carouselEl.addEventListener("mouseleave", carouselStartAuto);
+
+    // Suporte a swipe (arrastar) no celular
+    let startX = 0;
+    let isDragging = false;
+
+    carouselEl.addEventListener("touchstart", (e) => {
+
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        carouselStopAuto();
+
+    }, { passive: true });
+
+    carouselEl.addEventListener("touchend", (e) => {
+
+        if (!isDragging) return;
+
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > 40) {
+
+            if (diff > 0) carouselNext();
+            else carouselPrev();
+
+        }
+
+        isDragging = false;
+        carouselStartAuto();
+
+    }, { passive: true });
+
+    // Navegação por teclado
+    document.addEventListener("keydown", (e) => {
+
+        const rect = carouselEl.getBoundingClientRect();
+
+        const visible =
+            rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (!visible) return;
+
+        if (e.key === "ArrowLeft") carouselPrev();
+        if (e.key === "ArrowRight") carouselNext();
+
+    });
+
+}
+
+function carouselUpdate() {
+
+    const track = document.getElementById("carousel-track");
+    const slides = track.children;
+    const total = slides.length;
+
+    track.style.transform = `translateX(-${carouselIndex * 100}%)`;
+
+    const dots = document.querySelectorAll("#carousel-dots button");
+
+    dots.forEach((dot, i) => {
+
+        dot.classList.toggle("active", i === carouselIndex);
+
+    });
+
+}
+
+function carouselGoTo(index) {
+
+    const track = document.getElementById("carousel-track");
+    const total = track.children.length;
+
+    carouselIndex = (index + total) % total;
+
+    carouselUpdate();
+
+}
+
+function carouselNext() {
+    carouselGoTo(carouselIndex + 1);
+}
+
+function carouselPrev() {
+    carouselGoTo(carouselIndex - 1);
+}
+
+function carouselStartAuto() {
+
+    carouselStopAuto();
+
+    carouselTimer = setInterval(carouselNext, CAROUSEL_INTERVAL);
+
+}
+
+function carouselStopAuto() {
+
+    clearInterval(carouselTimer);
+
+    carouselTimer = null;
+
+}
+
+// Fallback: se a imagem da pasta "imagens" não carregar,
+// mostra um emoji indicando onde colocar a foto.
+function slideFallback(img, emoji) {
+
+    img.onerror = null;
+
+    const placeholder = document.createElement("div");
+
+    placeholder.className = "slide-placeholder";
+
+    placeholder.innerHTML = `<div class="emoji">${emoji}</div><div>Adicione sua foto na pasta imagens</div>`;
+
+    img.replaceWith(placeholder);
+
+}
+
+
+/* ==========================================
+   ZOOM DA FOTO DO PRODUTO
+========================================== */
+
+let zoomList = [];      // lista de produtos visíveis no momento
+let zoomIndex = 0;      // posição atual no modal
+
+// Abre o modal de zoom
+function openZoom(id) {
+
+    // Monta a lista com os produtos visíveis atualmente
+    // (respeita filtros e busca)
+    zoomList = products.filter(p => {
+
+        const search = document.getElementById("search").value.toLowerCase();
+
+        const matchesCategory =
+            activeCategory === "Todos" ||
+            p.category === activeCategory;
+
+        const matchesSearch =
+            (p.name + " " + p.brand + " " + p.category)
+            .toLowerCase()
+            .includes(search);
+
+        return matchesCategory && matchesSearch;
+
+    });
+
+    // Encontra a posição do produto clicado
+    zoomIndex = zoomList.findIndex(p => p.id === id);
+
+    if (zoomIndex < 0) return;
+
+    renderZoom();
+
+    const modal = document.getElementById("zoom-modal");
+
+    modal.classList.add("open");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+// Fecha o modal
+function closeZoom() {
+
+    const modal = document.getElementById("zoom-modal");
+
+    modal.classList.remove("open");
+
+    document.body.style.overflow = "";
+
+}
+
+// Atualiza conteúdo do modal
+function renderZoom() {
+
+    const p = zoomList[zoomIndex];
+
+    if (!p) return;
+
+    const box = document.getElementById("zoom-image-box");
+    const caption = document.getElementById("zoom-caption");
+
+    // Se tiver imagem, mostra a imagem
+    if (p.image) {
+
+        box.innerHTML = `
+            <img
+                src="${p.image}"
+                alt="${p.name}"
+                onerror="zoomImgFallback(this,'${p.emoji || '🧴'}')"
+            >
+        `;
+
+    } else {
+
+        box.innerHTML = `
+            <div class="zoom-placeholder">${p.emoji || '🧴'}</div>
+        `;
+
+    }
+
+    caption.innerHTML = `
+        <strong>${p.name}</strong>
+        <span>${p.brand} · ${money(p.price)}</span>
+    `;
+
+}
+
+// Fallback da imagem dentro do modal
+function zoomImgFallback(img, emoji) {
+
+    img.onerror = null;
+
+    const placeholder = document.createElement("div");
+
+    placeholder.className = "zoom-placeholder";
+
+    placeholder.textContent = emoji;
+
+    img.replaceWith(placeholder);
+
+}
+
+// Navegação entre produtos no modal
+function zoomNext() {
+
+    if (!zoomList.length) return;
+
+    zoomIndex = (zoomIndex + 1) % zoomList.length;
+
+    renderZoom();
+
+}
+
+function zoomPrev() {
+
+    if (!zoomList.length) return;
+
+    zoomIndex = (zoomIndex - 1 + zoomList.length) % zoomList.length;
+
+    renderZoom();
+
+}
+
+// Fecha o modal com ESC e navega com setas
+document.addEventListener("keydown", (e) => {
+
+    const modal = document.getElementById("zoom-modal");
+
+    if (!modal.classList.contains("open")) return;
+
+    if (e.key === "Escape") closeZoom();
+    if (e.key === "ArrowRight") zoomNext();
+    if (e.key === "ArrowLeft") zoomPrev();
+
+});
+
+
+/* ==========================================
+   CADASTRO DE PRODUTOS (APENAS LIMPEZA)
+========================================== */
+
+const products = [
+
+    // TOPBEL - SABONETES
+
+    {
+        id: 1,
+        name: "Sabonete Líquido Erva Doce 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/1.png"
+    },
+
+    {
+        id: 2,
+        name: "Sabonete Líquido Lavanda 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/2.png"
+    },
+
+    {
+        id: 3,
+        name: "Sabonete Líquido Neutro 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/3.png"
+    },
+
+    // TOPBEL - LIMPEZA GERAL
+
+    {
+        id: 4,
+        name: "Desinfetante Uso Geral Eucalipto 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/4.PNG"
+    },
+
+    {
+        id: 5,
+        name: "Desinfetante Uso Geral Pinho 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/5.png"
+    },
+
+    {
+        id: 6,
+        name: "Desinfetante Uso Geral Floral 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/6.png"
+    },
+
+    {
+        id: 7,
+        name: "Limpador Multiuso VEJA 500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 2.80,
+        image: "imagens/7.png"
+    },
+
+    {
+        id: 8,
+        name: "Limpador de Vidros 500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 2.80,
+        image: "imagens/8.png"
+    },
+
+    {
+        id: 9,
+        name: "Água Sanitária Galão 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 9.15,
+        image: "imagens/9.png"
+    },
+
+    {
+        id: 10,
+        name: "Desinfetante Hipoclorito (Cloro) 2,5% - 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 9.15,
+        image: "imagens/10.png"
+    },
+
+    {
+        id: 11,
+        name: "Álcool Gel 70% Fliptop 440g/500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 5.43,
+        image: "imagens/11.png"
+    },
+
+    // TOPBEL - LAVANDERIA
+
+    {
+        id: 12,
+        name: "Lava Roupas Líquido 5 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 19.50,
+        image: "imagens/122.png"
+    },
+
+    {
+        id: 13,
+        name: "Lava Roupas Líquido 2 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 12.40,
+        image: "imagens/13.png"
+    },
+
+    {
+        id: 14,
+        name: "Amaciante para Roupas 5 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 13.78,
+        image: "imagens/14.png"
+    },
+
+    {
+        id: 15,
+        name: "Amaciante para Roupas 2 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 5.00,
+        image: "imagens/15.png"
+    },
+
+    // BARRA
+
+    {
+        id: 16,
+        name: "Detergente Neutro 500 ml",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 1.95,
+        image: "imagens/16.png"
+    },
+
+    {
+        id: 17,
+        name: "Sabão em Pó 800 g",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 4.79,
+        image: "imagens/17.png"
+    },
+
+    {
+        id: 18,
+        name: "Sabão em Pó 1,60 kg",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 7.39,
+        image: "imagens/18.png"
+    },
+
+    {
+        id: 19,
+        name: "Sabão Pastoso Pote 500 g",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 6.15,
+        image: "imagens/19.pNg"
+    },
+
+    {
+        id: 20,
+        name: "Sabão em Barra Glicerinado Pacote com 5 Barras",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 8.78,
+        image: "imagens/20.png"
+    },
+
+    {
+        id: 21,
+        name: "Limpador Multiuso VEJA 500 ml",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 2.80,
+        image: "imagens/21.png"
+    },
+
+    // MEDIX
+
+    {
+        id: 22,
+        name: "Luva de Limpeza Geral Emborrachada Tamanho G",
+        brand: "MEDIX",
+        category: "Luvas",
+        price: 2.28,
+        image: "imagens/22.png"
+    },
+
+    // CORDEX
+
+    {
+        id: 23,
+        name: "Álcool 70º - 1 Litro",
+        brand: "CORDEX",
+        category: "Álcool",
+        price: 6.98,
+        image: "imagens/23.png"
+    },
+
+    // ACESSÓRIOS
+
+    {
+        id: 24,
+        name: "Esponja de Limpeza Dupla Face Brasileirinha",
+        brand: "OUTRAS MARCAS",
+        category: "Acessórios",
+        price: 0.74,
+        image: "imagens/24.png"
+    },
+
+    // NOVOS ITENS DE LIMPEZA ADICIONADOS
+
+    {
+        id: 54,
+        name: "Desodorante Antitranspirante Aerossol Above",
+        brand: "Above",
+        category: "Acessórios",
+        price: 7.80,
+        image: "imagens/desodoranteabove.jpg",
+        emoji: "🧽"
+    },
+
+    {
+        id: 55,
+        name: "Balde Plástico Preto 15l",
+        brand: "OUTRAS MARCAS",
+        category: "Acessórios",
+        price: 9.50,
+        image: "imagens/balde.jpeg",
+        emoji: "🧹"
+    },
+
+    {
+        id: 56,
+        name: "Purificador De Ar Puro Ar Aerossol Pétala De Rosas 250ml",
+        brand: "PURO AR",
+        category: "Limpeza geral",
+        price: 8.90,
+        image: "imagens/puroar.png",
+        emoji: "🧴"
+    },
+
+    {
+        id: 57,
+        name: "Sabonete Esfoliante Erva-Doce Ecológica 80g",
+        brand: "Ecológica",
+        category: "Limpeza geral",
+        price: 1.50,
+        image: "imagens/sabonetepequeno.png",
+        emoji: "🌸"
+    },
+
+    {
+        id: 58,
+        name: "KIT DE LIMPEZA 5L - Água Sanitária, Lava Roupas Líquido, Amaciante de Roupas e Desinfetante",
+        brand: "KIT COMPLETO",
+        category: "Luvas",
+        price: 55.00,
+        image: "imagens/carrossel3.jpeg",
+        emoji: "🧤"
+    }
+
+];
+
+
+/* ==========================================
+   FUNCIONAMENTO DO CATÁLOGO
+========================================== */
+
+let cart = {};
+
+let activeCategory = "Todos";
+
+const money = value => {
+
+    return Number(value).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+
+};
+
+
+/* ==========================================
+   EXIBIR PRODUTOS
+========================================== */
+
+function renderProducts() {
+
+    const search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const list = products.filter(p => {
+
+        const matchesCategory =
+            activeCategory === "Todos" ||
+            p.category === activeCategory;
+
+        const matchesSearch =
+            (p.name + " " + p.brand + " " + p.category)
+            .toLowerCase()
+            .includes(search);
+
+        return matchesCategory && matchesSearch;
+
+    });
+
+    const container = document.getElementById("products");
+
+    if (!list.length) {
+
+        container.innerHTML =
+            '<div class="empty">Nenhum produto encontrado.</div>';
+
+        return;
+
+    }
+
+    container.innerHTML = list.map(p => `
+
+        <article class="product">
+
+            <div
+                class="product-image"
+                onclick="openZoom(${p.id})"
+                title="Clique para ampliar a foto"
+            >
+
+                <img
+                    src="${p.image}"
+                    alt="${p.name}"
+                    loading="lazy"
+                    onerror="imgFallback(this,'${p.emoji || ''}')"
+                >
+
+            </div>
+
+            <span class="brand">${p.brand}</span>
+
+            <h3>${p.name}</h3>
+
+            <small>Venda por unidade / embalagem descrita</small>
+
+            <div class="product-bottom">
+
+                <span class="price">${money(p.price)}</span>
+
+                <button
+                    class="add"
+                    onclick="addToCart(${p.id})"
+                >
+                    + Adicionar
+                </button>
+
+            </div>
+
+        </article>
+
+    `).join("");
+
+}
+
+
+/* ==========================================
+   IMAGENS ALTERNATIVAS
+========================================== */
+
+function imgFallback(img, emoji) {
+
+    img.onerror = null;
+
+    if (emoji) {
+
+        const box = document.createElement("div");
+
+        box.className = "img-placeholder";
+
+        box.textContent = emoji;
+
+        img.replaceWith(box);
+
+    } else {
+
+        img.src = "imagens/sem-foto.png";
+
+    }
+
+}
+
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+function setCategory(category, button) {
+
+    activeCategory = category;
+
+    document.querySelectorAll(".filter").forEach(b => {
+
+        b.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+    renderProducts();
+
+}
+
+
+/* ==========================================
+   CARRINHO
+========================================== */
+
+function addToCart(id) {
+
+    cart[id] = (cart[id] || 0) + 1;
+
+    updateCart();
+
+}
+
+
+function changeQuantity(id, amount) {
+
+    cart[id] = (cart[id] || 0) + amount;
+
+    if (cart[id] <= 0) {
+
+        delete cart[id];
+
+    }
+
+    updateCart();
+
+}
+
+
+function removeItem(id) {
+
+    delete cart[id];
+
+    updateCart();
+
+}
+
+
+// LIMPAR TODO O CARRINHO
+function clearCart() {
+
+    if (!Object.keys(cart).length) return;
+
+    const confirmar = confirm(
+        "Tem certeza que deseja apagar TODOS os itens do carrinho?"
+    );
+
+    if (!confirmar) return;
+
+    cart = {};
+
+    updateCart();
+
+    showToast("🗑️ Carrinho esvaziado com sucesso.");
+
+}
+
+
+function getSubtotal() {
+
+    return Object.entries(cart).reduce((sum, [id, qty]) => {
+
+        const product = products.find(
+            p => p.id === Number(id)
+        );
+
+        return sum + product.price * qty;
+
+    }, 0);
+
+}
+
+
+/* ==========================================
+   ATUALIZAÇÃO DO CARRINHO
+========================================== */
+
+function updateCart() {
+
+    const container = document.getElementById("cart-items");
+
+    const entries = Object.entries(cart);
+
+    const count = entries.reduce(
+        (sum, item) => sum + item[1],
+        0
+    );
+
+    document.getElementById("cart-count").textContent = count;
+
+    // Habilita/desabilita o botão "Limpar carrinho"
+    const clearBtn = document.getElementById("clear-cart-btn");
+
+    clearBtn.disabled = entries.length === 0;
+
+    if (!entries.length) {
+
+        container.className = "cart-empty";
+
+        container.innerHTML =
+            "Seu carrinho está vazio. Adicione produtos para começar!";
+
+        document.getElementById("summary").style.display = "none";
+
+        return;
+
+    }
+
+    container.className = "";
+
+    container.innerHTML = entries.map(([id, qty]) => {
+
+        const p = products.find(
+            item => item.id === Number(id)
+        );
+
+        return `
+
+            <div class="cart-row">
+
+                <div>
+
+                    <strong>${p.name}</strong>
+
+                    <small>
+                        ${p.brand} · ${money(p.price)} cada
+                    </small>
+
+                </div>
+
+                <div class="quantity">
+
+                    <button onclick="changeQuantity(${p.id},-1)">
+                        −
+                    </button>
+
+                    <strong>${qty}</strong>
+
+                    <button onclick="changeQuantity(${p.id},1)">
+                        +
+                    </button>
+
+                </div>
+
+                <strong class="row-total">
+                    ${money(p.price * qty)}
+                </strong>
+
+                <button
+                    class="remove"
+                    onclick="removeItem(${p.id})"
+                >
+                    Remover
+                </button>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+    document.getElementById("summary").style.display = "block";
+
+    const subtotal = getSubtotal();
+
+    const isPix =
+        document.getElementById("payment").value === "Pix";
+
+    const discount = isPix ? subtotal * 0.03 : 0;
+
+    const total = subtotal - discount;
+
+    document.getElementById("subtotal").textContent =
+        money(subtotal);
+
+    document.getElementById("discount").textContent =
+        "- " + money(discount);
+
+    document.getElementById("discount-row").style.display =
+        isPix ? "flex" : "none";
+
+    document.getElementById("total").textContent =
+        money(total);
+
+}
+
+
+/* ==========================================
+   KIT DE LIMPEZA IDEAL
+========================================== */
+
+// Cada item: [ID do produto, qtd. Pequeno, qtd. Médio, qtd. Grande]
+
+const KIT_SIZES = [
+
+    { label: "Pequeno", hint: "até 50 m²" },
+
+    { label: "Médio", hint: "50 a 150 m²" },
+
+    { label: "Grande", hint: "acima de 150 m²" }
+
+];
+
+
+const KIT_ENVS = {
+
+    casa: {
+
+        label: "🏠 Casa",
+
+        items: [
+
+            [4, 1, 2, 3],
+            [9, 1, 1, 2],
+            [16, 2, 3, 5],
+            [24, 2, 3, 5],
+            [7, 1, 2, 3],
+            [8, 1, 1, 2],
+            [13, 1, 2, 3],
+            [15, 1, 2, 3],
+            [22, 1, 2, 3],
+            [11, 1, 2, 3]
+
+        ]
+
+    },
+
+    escritorio: {
+
+        label: "💼 Escritório / Empresa",
+
+        items: [
+
+            [3, 1, 1, 2],
+            [4, 1, 2, 3],
+            [7, 2, 3, 5],
+            [8, 1, 2, 3],
+            [23, 1, 2, 3],
+            [11, 2, 3, 5],
+            [9, 1, 1, 2],
+            [22, 1, 2, 3],
+            [24, 2, 3, 5]
+
+        ]
+
+    },
+
+    cozinha: {
+
+        label: "🍽️ Restaurante / Cozinha",
+
+        items: [
+
+            [16, 3, 6, 12],
+            [19, 1, 2, 3],
+            [10, 1, 2, 4],
+            [9, 1, 2, 3],
+            [4, 1, 2, 4],
+            [24, 4, 8, 15],
+            [22, 2, 4, 8],
+            [23, 1, 2, 4],
+            [11, 1, 2, 3],
+            [3, 1, 1, 2]
+
+        ]
+
+    },
+
+    condominio: {
+
+        label: "🏢 Condomínio / Escola",
+
+        items: [
+
+            [4, 1, 2, 4],
+            [5, 1, 2, 3],
+            [9, 1, 2, 4],
+            [10, 1, 1, 2],
+            [7, 2, 4, 6],
+            [8, 1, 2, 3],
+            [3, 1, 2, 3],
+            [11, 2, 3, 5],
+            [22, 2, 4, 6],
+            [24, 3, 5, 8]
+
+        ]
+
+    }
+
+};
+
+
+let kitEnv = null;
+
+let kitSize = null;
+
+let kitState = {};
+
+
+/* ==========================================
+   OPÇÕES DO KIT
+========================================== */
+
+function renderKitChips() {
+
+    document.getElementById("kit-env").innerHTML =
+
+        Object.entries(KIT_ENVS).map(([key, env]) => `
+
+            <button
+                class="kit-chip ${kitEnv === key ? "active" : ""}"
+                onclick="selectKitEnv('${key}')"
+            >
+                ${env.label}
+            </button>
+
+        `).join("");
+
+
+    document.getElementById("kit-size").innerHTML =
+
+        KIT_SIZES.map((s, i) => `
+
+            <button
+                class="kit-chip ${kitSize === i ? "active" : ""}"
+                onclick="selectKitSize(${i})"
+            >
+                ${s.label}
+
+                <small>${s.hint}</small>
+
+            </button>
+
+        `).join("");
+
+}
+
+
+function selectKitEnv(key) {
+
+    kitEnv = key;
+
+    buildKit();
+
+}
+
+
+function selectKitSize(index) {
+
+    kitSize = index;
+
+    buildKit();
+
+}
+
+
+/* ==========================================
+   MONTAR KIT
+========================================== */
+
+function buildKit() {
+
+    kitState = {};
+
+    if (kitEnv !== null && kitSize !== null) {
+
+        KIT_ENVS[kitEnv].items.forEach(item => {
+
+            const qty = item[kitSize + 1];
+
+            if (qty > 0) {
+
+                kitState[item[0]] = {
+                    on: true,
+                    qty: qty
+                };
+
+            }
+
+        });
+
+    }
+
+    renderKitChips();
+
+    renderKit();
+
+}
+
+
+/* ==========================================
+   TOTAL DO KIT
+========================================== */
+
+function getKitTotal() {
+
+    return Object.entries(kitState).reduce((sum, [id, item]) => {
+
+        if (!item.on) return sum;
+
+        const p = products.find(
+            x => x.id === Number(id)
+        );
+
+        return sum + p.price * item.qty;
+
+    }, 0);
+
+}
+
+
+/* ==========================================
+   EXIBIR KIT
+========================================== */
+
+function renderKit() {
+
+    const box = document.getElementById("kit-result");
+
+    if (kitEnv === null || kitSize === null) {
+
+        box.innerHTML = `
+
+            <div class="kit-hint">
+                👆 Escolha o local e o tamanho para ver o kit sugerido.
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    const rows = Object.entries(kitState).map(([id, item]) => {
+
+        const p = products.find(
+            x => x.id === Number(id)
+        );
+
+        return `
+
+            <div class="kit-row ${item.on ? "" : "off"}">
+
+                <input
+                    type="checkbox"
+                    ${item.on ? "checked" : ""}
+                    onchange="toggleKitItem(${p.id})"
+                    aria-label="Incluir ${p.name}"
+                >
+
+                <div>
+
+                    <strong>${p.name}</strong>
+
+                    <small>
+                        ${p.brand} · ${money(p.price)} cada
+                    </small>
+
+                </div>
+
+                <div class="quantity">
+
+                    <button onclick="changeKitQty(${p.id},-1)">
+                        −
+                    </button>
+
+                    <strong>${item.qty}</strong>
+
+                    <button onclick="changeKitQty(${p.id},1)">
+                        +
+                    </button>
+
+                </div>
+
+                <strong class="row-total">
+                    ${money(p.price * item.qty)}
+                </strong>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+
+    const total = getKitTotal();
+
+    const hasItems = Object.values(kitState).some(i => i.on);
+
+
+    const warning = (hasItems && total < 55)
+
+        ? `
+
+            <div class="kit-warning">
+
+                O pedido mínimo é de R$ 55,00.
+                Complete o kit com outros produtos do catálogo,
+                se precisar.
+
+            </div>
+
+        `
+
+        : "";
+
+
+    box.innerHTML = `
+
+        <div class="kit-list">
+            ${rows}
+        </div>
+
+        <div class="kit-footer">
+
+            <div class="kit-total">
+
+                <span>Total do kit</span>
+
+                <strong>${money(total)}</strong>
+
+            </div>
+
+            <button
+                class="kit-add"
+                onclick="addKitToCart()"
+                ${hasItems ? "" : "disabled style='opacity:.5'"}
+            >
+                🛒 ADICIONAR KIT AO CARRINHO
+            </button>
+
+        </div>
+
+        ${warning}
+
+    `;
+
+}
+
+
+/* ==========================================
+   ALTERAR ITENS DO KIT
+========================================== */
+
+function toggleKitItem(id) {
+
+    kitState[id].on = !kitState[id].on;
+
+    renderKit();
+
+}
+
+
+function changeKitQty(id, amount) {
+
+    kitState[id].qty = Math.max(
+        1,
+        kitState[id].qty + amount
+    );
+
+    renderKit();
+
+}
+
+
+/* ==========================================
+   NOTIFICAÇÕES
+========================================== */
+
+let toastTimer;
+
+
+function showToast(html) {
+
+    const t = document.getElementById("toast");
+
+    t.innerHTML = html;
+
+    t.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(
+        () => t.classList.remove("show"),
+        5000
+    );
+
+}
+
+
+/* ==========================================
+   ADICIONAR KIT AO CARRINHO
+========================================== */
+
+function addKitToCart() {
+
+    let added = 0;
+
+    Object.entries(kitState).forEach(([id, item]) => {
+
+        if (item.on) {
+
+            cart[id] = (cart[id] || 0) + item.qty;
+
+            added++;
+
+        }
+
+    });
+
+    if (!added) return;
+
+    updateCart();
+
+    showToast(
+
+        "✓ Kit adicionado ao carrinho " +
+
+        "<a onclick=\"goCart();document.getElementById('toast').classList.remove('show')\">Ver carrinho</a>"
+
+    );
+
+}
+
+
+/* ==========================================
+   NAVEGAÇÃO ATÉ O CARRINHO
+========================================== */
+
+function goCart() {
+
+    document.getElementById("cart").scrollIntoView({
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* ==========================================
+   TIPO DE PESSOA: PF / PJ
+========================================== */
+
+function updatePersonType() {
+
+    const type = document.getElementById("personType").value;
+
+    const nameLabel = document.getElementById("nameLabel");
+
+    const customerInput = document.getElementById("customer");
+
+    const docLabel = document.getElementById("docLabel");
+
+    const docInput = document.getElementById("document");
+
+    docInput.value = "";
+
+    if (type === "PF") {
+
+        nameLabel.textContent = "Nome completo *";
+
+        customerInput.placeholder = "Seu nome completo";
+
+        docLabel.textContent = "CPF *";
+
+        docInput.placeholder = "000.000.000-00";
+
+    } else {
+
+        nameLabel.textContent = "Razão Social *";
+
+        customerInput.placeholder = "Razão social da empresa";
+
+        docLabel.textContent = "CNPJ *";
+
+        docInput.placeholder = "00.000.000/0000-00";
+
+    }
+
+}
+
+
+/* ==========================================
+   VALIDAÇÃO DE CPF / CNPJ
+========================================== */
+
+function onlyDigits(value) {
+
+    return (value || "").replace(/\D/g, "");
+
+}
+
+
+function isValidDocument(type, value) {
+
+    const digits = onlyDigits(value);
+
+    if (type === "PF") {
+
+        return digits.length === 11;
+
+    }
+
+    return digits.length === 14;
+
+}
+
+
+/* ==========================================
+   FINALIZAÇÃO PELO WHATSAPP
+========================================== */
+
+function checkout() {
+
+    const entries = Object.entries(cart);
+
+    if (!entries.length) {
+
+        alert("Adicione pelo menos um produto ao carrinho.");
+
+        return;
+
+    }
+
+    const subtotal = getSubtotal();
+
+    if (subtotal < 55) {
+
+        alert(
+
+            "O pedido mínimo é de R$ 55,00.\n" +
+
+            "Faltam " + money(55 - subtotal) +
+
+            " para atingir o mínimo."
+
+        );
+
+        return;
+
+    }
+
+
+    const personType =
+        document.getElementById("personType").value;
+
+    const customer =
+        document.getElementById("customer").value.trim();
+
+    const documentValue =
+        document.getElementById("document").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const city =
+        document.getElementById("city").value.trim();
+
+    const address =
+        document.getElementById("address").value.trim();
+
+    const payment =
+        document.getElementById("payment").value;
+
+    const notes =
+        document.getElementById("notes").value.trim();
+
+
+    // VALIDAR DADOS OBRIGATÓRIOS
+
+    if (!customer || !phone || !city || !address) {
+
+        alert(
+            "Preencha nome/razão social, telefone, cidade e endereço de entrega."
+        );
+
+        return;
+
+    }
+
+
+    if (!documentValue) {
+
+        alert(
+
+            personType === "PF"
+
+                ? "Informe o CPF."
+
+                : "Informe o CNPJ."
+
+        );
+
+        return;
+
+    }
+
+
+    if (!isValidDocument(personType, documentValue)) {
+
+        alert(
+
+            personType === "PF"
+
+                ? "CPF inválido. Informe 11 dígitos."
+
+                : "CNPJ inválido. Informe 14 dígitos."
+
+        );
+
+        return;
+
+    }
+
+
+    // CALCULAR DESCONTO
+
+    const discount =
+        payment === "Pix" ? subtotal * 0.03 : 0;
+
+    const total = subtotal - discount;
+
+    const docLabel =
+        personType === "PF" ? "CPF" : "CNPJ";
+
+    // Data e hora do pedido
+    const now = new Date();
+    const dataHora = now.toLocaleString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+
+    /* ==========================================
+       MENSAGEM ORGANIZADA DO WHATSAPP
+    ========================================== */
+
+    const sep = "━━━━━━━━━━━━━━━━━━━━";
+
+    let message = "";
+
+    // CABEÇALHO
+    message += "🛒 *NOVO PEDIDO RECEBIDO*\n";
+    message += "🏢 *VERTEX DISTRIBUIDORA*\n";
+    message += sep + "\n\n";
+
+    // DATA
+    message += "📅 *Data:* " + dataHora + "\n\n";
+
+    message += sep + "\n\n";
+
+    // DADOS DO CLIENTE
+    message += "👤 *DADOS DO CLIENTE*\n";
+    message += sep + "\n";
+    message += "📝 *Tipo:* " +
+        (personType === "PF"
+            ? "Pessoa Física"
+            : "Pessoa Jurídica") + "\n";
+    message += (personType === "PF"
+            ? "🙋 *Nome:* "
+            : "🏢 *Razão Social:* ") +
+        customer + "\n";
+    message += "🆔 *" + docLabel + ":* " + documentValue + "\n";
+    message += "📞 *Telefone:* " + phone + "\n";
+    message += "🏙️ *Cidade:* " + city + "\n";
+    message += "📍 *Endereço:* " + address + "\n\n";
+
+    message += sep + "\n\n";
+
+    // PRODUTOS
+    message += "📦 *PRODUTOS DO PEDIDO*\n";
+    message += sep + "\n";
+
+    entries.forEach(([id, qty], index) => {
+
+        const p = products.find(
+            item => item.id === Number(id)
+        );
+
+        message += "\n" + (index + 1) + "️⃣ *" + p.name + "*\n";
+        message += "   • Marca: " + p.brand + "\n";
+        message += "   • Qtd: " + qty + "x\n";
+        message += "   • Unitário: " + money(p.price) + "\n";
+        message += "   • Subtotal: *" + money(p.price * qty) + "*\n";
+
+    });
+
+    message += "\n" + sep + "\n\n";
+
+    // RESUMO FINANCEIRO
+    message += "💰 *RESUMO FINANCEIRO*\n";
+    message += sep + "\n";
+    message += "🧾 Subtotal: " + money(subtotal) + "\n";
+
+    if (discount > 0) {
+
+        message += "🏷️ Desconto Pix (3%): *- " +
+            money(discount) + "*\n";
+
+    }
+
+    message += "\n💵 *TOTAL: " + money(total) + "*\n\n";
+    message += "💳 *Forma de pagamento:* " + payment;
+
+    if (payment === "Boleto") {
+
+        message += " (prazo de 7 dias)";
+
+    }
+
+    message += "\n\n";
+
+    message += sep + "\n\n";
+
+    // OBSERVAÇÕES
+    if (notes) {
+
+        message += "📝 *OBSERVAÇÕES*\n";
+        message += sep + "\n";
+        message += notes + "\n\n";
+        message += sep + "\n\n";
+
+    }
+
+    // ENTREGA
+    message += "🚚 *INFORMAÇÕES DE ENTREGA*\n";
+    message += sep + "\n";
+    message += "⏱️ Prazo: até 72 horas\n";
+    message += "🗺️ Região: Sul Fluminense - RJ\n\n";
+
+    message += sep + "\n\n";
+
+    // RODAPÉ
+    message += "✅ *Aguardo a confirmação do pedido.*\n";
+    message += "🙏 Obrigado pela preferência!";
+
+
+    // VALIDAR WHATSAPP DA LOJA
+
+    if (!/^55\d{10,11}$/.test(WHATSAPP)) {
+
+        alert(
+            "Configure o número de WhatsApp da loja no código antes de finalizar."
+        );
+
+        return;
+
+    }
+
+
+    // ABRIR WHATSAPP
+
+    const url =
+
+        "https://wa.me/" +
+        WHATSAPP +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(url, "_blank");
+
+}
+
+
+/* ==========================================
+   INICIALIZAÇÃO DO SISTEMA
+========================================== */
+
+renderProducts();
+
+renderKitChips();
+
+renderKit();
+
+updateCart();
+
+updatePersonType();
+
+carouselInit();
+
+</script>
+
+</body>
+</html>
